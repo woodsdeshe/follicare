@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +8,7 @@ import { AuthService } from '../register.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-constructor(private authService: AuthService) {}
+constructor(private authService: AuthService, private router: Router) {}
 
 showSignUp: boolean = false;
   signUpData = {
@@ -16,7 +17,7 @@ showSignUp: boolean = false;
   };
 
   showSignUpForm() {
-    this.showSignUp = true;
+    this.router.navigate(['/register']);
   }
 
   submitSignUpForm() {
