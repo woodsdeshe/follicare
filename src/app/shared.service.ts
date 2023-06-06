@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-private showSignUpSource = new Subject<Boolean>();
+private showSignUpSource = new Subject<boolean>();
 showSignUp$ = this.showSignUpSource.asObservable();
 
 toggleSignUp(showSignUp: boolean) {

@@ -1,24 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../register.service';
-import { Router } from '@angular/router';
+import { SharedService } from '../shared.service';
+import { Observer } from 'rxjs';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent {
-constructor(private authService: AuthService, private router: Router) {}
+export class RegisterComponent implements OnInit {
+constructor(private authService: AuthService, private sharedService: SharedService) {}
 
 showSignUp: boolean = false;
-  signUpData = {
+  
+signUpData = {
     email: '',
     password: ''
   };
-
-  showSignUpForm() {
-    this.router.navigate(['/register']);
-  }
 
   submitSignUpForm() {
     console.log('Sign Up Form submitted');
@@ -32,12 +30,32 @@ showSignUp: boolean = false;
   }
 
 register() {
-  const newUserData = {email: 'head@honcho.com', password: 'honcho'};
+  const apiUrl = 'http://localhost:8080/auth/users/register';
 
-  this.authService.register(newUserData).subscribe((response) => {
-    console.log('Registration complete');
-     });
+  const registrationData = {
+    apiUrl: apiUrl,
+    userData: this.signUpData
+  };
+
+  
+  const observer: Observer<any> = {
+    next: (response) => {
+      console.log('Registration complete');
+    },
+    error: (err) => {
+      console.log('Registration error');
+    },
+    complete: () => {
+    }
+  };
+
+  this.authService.register(registrationData).subscribe(observer);
+}
+
+  ngOnInit() {
+    this.sharedService.showSignUp$.subscribe((showSignUp) => {
+      this.showSignUp = showSignUp;
+    })
   }
-
   
 }
