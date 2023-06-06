@@ -22,13 +22,13 @@ describe('AuthService', () => {
   });
 
   it('should register a new user', () => {
-    const userData = { username: 'john', password: 'password' };
+    const userData = { username: 'john', email: 'john@gmail.com', password: 'password' };
 
     service.register(userData).subscribe((response) => {
       expect(response).toBeTruthy();
     });
 
-    const request = httpMock.expectOne('http://your-java-api.com/auth/register');
+    const request = httpMock.expectOne('http://localhost:8080/auth/users/register');
     expect(request.request.method).toBe('POST');
     request.flush({ status: 'success' });
   });
@@ -40,7 +40,7 @@ describe('AuthService', () => {
       expect(response).toBeTruthy();
     });
 
-    const request = httpMock.expectOne('http://your-java-api.com/auth/login');
+    const request = httpMock.expectOne('http://localhost:8080/auth/users/login');
     expect(request.request.method).toBe('POST');
     request.flush({ status: 'success' });
   });
