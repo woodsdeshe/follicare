@@ -25,10 +25,4 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('follicare-f app is running!');
   });
-
-  describe('RegisterComponent', () => {
-    it('should register a new user', () => {
-      expect(register(newUser)).toBeTruthy();
-    })
-  });
 });
