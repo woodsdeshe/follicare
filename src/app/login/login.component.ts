@@ -10,15 +10,58 @@ import { Observer } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private sharedService: SharedService) {
+    this.sharedService.showLogin$.subscribe((showLogin: boolean) => {
+      this.showLogin = showLogin;
+    })
+  }
+
+  showLogin: boolean = false;
+
+  loginData = {
+    email: '',
+    password:''
+  };
+
+  submitLoginForm() {
+    console.log('Login form submitted');
+    console.log(this.loginData);
+    
+    this.loginData = {
+      email: '',
+      password: ''
+    };
+    this.showLogin = false;
+  }
 
   login() {
-    const loggedInUser = {email: 'head@honcho.com', password: 'honcho'};
+    const apiUrl = 'http://localhost:8080/auth/users/login';
 
-    this.authService.login(loggedInUser).subscribe((response) => {console.log('Login complete');
-    const token = response.token;
-    this.authService.setJwtToken(token);
-   });
+    const loginData = {
+      apiUrl: apiUrl,
+      userData: this.loginData
+    };
+
+
+
+    const observer: Observer<any> = {
+      next: (response) => {
+        console.log('Login complete');
+      },
+      error: (err) => {
+        console.log('Login error');
+      },
+      complete: () => {
+      }
+    };
+
+    this.authService.login(loginData).subscribe(observer);
+  }
+
+  ngOnInit(): void {
+      this.sharedService.showLogin$.subscribe((showLogin) => {
+        this.showLogin = showLogin;
+      })
   }
 
 }

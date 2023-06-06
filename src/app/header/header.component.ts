@@ -18,4 +18,8 @@ export class HeaderComponent {
     this.sharedService.toggleSignUp(true);
   }
 
+  toggleLogin() {
+    this.sharedService.toggleSignUp(false);
+  }
+
 }

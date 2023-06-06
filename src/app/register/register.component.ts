@@ -9,7 +9,11 @@ import { Observer } from 'rxjs';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-constructor(private authService: AuthService, private sharedService: SharedService) {}
+constructor(private authService: AuthService, private sharedService: SharedService) {
+  this.sharedService.showSignUp$.subscribe((showSignUp: boolean) => {
+    this.showSignUp = showSignUp;
+  })
+}
 
 showSignUp: boolean = false;
   
