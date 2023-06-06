@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RegisterComponent } from './register/register.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
@@ -23,5 +24,11 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('follicare-f app is running!');
+  });
+
+  describe('RegisterComponent', () => {
+    it('should register a new user', () => {
+      expect(register(newUser)).toBeTruthy();
+    })
   });
 });
