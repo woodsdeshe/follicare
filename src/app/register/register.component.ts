@@ -17,10 +17,5 @@ register() {
      });
   }
 
-  login() {
-    const loggedInUser = {email: 'head@honcho.com', password: 'honcho'};
-
-    this.authService.login(loggedInUser).subscribe((response) => {console.log('Login complete');
-   });
-  }
+  
 }
