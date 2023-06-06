@@ -7,6 +7,8 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { FavoritesComponent } from './favorites/favorites.component';
     RegisterComponent,
     LoginComponent,
     ProfileComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
