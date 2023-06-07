@@ -8,6 +8,7 @@ import { UserService } from '../services/user.service';
 })
 export class MainComponent implements OnInit {
   content?: string;
+  isSideBarCollapsed: boolean = true;
 
   constructor(private userService: UserService) {}
 
@@ -24,5 +25,9 @@ export class MainComponent implements OnInit {
         }
       }
     });
+  }
+
+  toggleSidebar(): void {
+    this.isSideBarCollapsed = !this.isSideBarCollapsed;
   }
 }
