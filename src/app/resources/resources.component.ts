@@ -19,7 +19,8 @@ export class ResourcesComponent implements OnInit {
     this.http.get<any[]>('http://localhost:8080/api/resources/all')
     .subscribe(
       response => {
-        this. resources = response;
+        this.resources = response;
+        console.log(response)
       },
       error => {
         console.error("Couldn't get resources")

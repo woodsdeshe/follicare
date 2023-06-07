@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { ResourcesComponent } from '../resources/resources.component';
 
 @Component({
   selector: 'app-main',
@@ -30,4 +31,6 @@ export class MainComponent implements OnInit {
   toggleSidebar(): void {
     this.isSideBarCollapsed = !this.isSideBarCollapsed;
   }
+  
 }
+
