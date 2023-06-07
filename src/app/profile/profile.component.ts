@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,23 +7,11 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  profileData: any;
+  currentUser: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private storageService: StorageService) { }
 
   ngOnInit(): void {
-    this.fetchProfileData();
-  }
-
-  fetchProfileData(): void {
-    this.http.get('http://localhost:8080/api/profile')
-      .subscribe(
-        (response: any) => {
-          this.profileData = response;
-        },
-        (error: any) => {
-          console.error('Error fetching profile data:', error);
-        }
-      );
+    this.currentUser = this.storageService.getUser();
   }
 }
