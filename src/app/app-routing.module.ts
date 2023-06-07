@@ -7,6 +7,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { MainComponent } from "./main/main.component";
 import { ResourcesComponent } from "./resources/resources.component";
 import { HomeComponent } from "./home/home.component";
+import { SpecialistsComponent } from "./specialists/specialists.component";
 
 const routes: Routes = [
 
