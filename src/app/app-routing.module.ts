@@ -12,9 +12,6 @@ import { SpecialistsComponent } from "./specialists/specialists.component";
 const routes: Routes = [
 
     {path: '', component: HomeComponent},
-    // { path: 'register', component: RegisterComponent},
-    // { path: 'login', component: LoginComponent},
-    // {path: 'profile', component: ProfileComponent},
     {path: 'main', component: MainComponent, children: [
         {path: 'resources', component: ResourcesComponent},
         {path: 'specialists', component: SpecialistsComponent},

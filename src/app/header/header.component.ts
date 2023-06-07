@@ -7,16 +7,16 @@ import { SharedService } from '../shared.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  isSignUpCollapsed: boolean = true;
-  isLoginCollapsed: boolean = true;
+  showLoginComponent = false;
+  showRegisterComponent = false;
 
-  toggleSignUp() {
-    this.isSignUpCollapsed = !this.isSignUpCollapsed;
-    this.isLoginCollapsed = true;
+  showLogin() {
+    this.showLoginComponent = true;
+    this.showRegisterComponent = false;
   }
 
-  toggleLogin() {
-    this.isSignUpCollapsed = true;
-    this.isLoginCollapsed = !this.isLoginCollapsed;
+  showRegister() {
+    this.showRegisterComponent = true;
+    this.showLoginComponent = false;
   }
 }
