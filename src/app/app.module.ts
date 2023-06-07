@@ -16,6 +16,7 @@ import { JwtInterceptor } from './jwt.interceptor';
 import { MainComponent } from './main/main.component';
 import { httpInterceptorProviders } from './http.interceptor';
 import { AppRoutingModule } from './app-routing.module';
+import { ResourcesComponent } from './resources/resources.component';
 
 
 
@@ -29,7 +30,8 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     HeaderComponent,
     HomeImgComponent,
-    MainComponent
+    MainComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,

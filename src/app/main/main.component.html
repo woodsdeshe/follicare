@@ -8,7 +8,7 @@
           <div class="collapse navbar-collapse" [ngClass]="{ 'show': !isSideBarCollapsed}">
             <ul class="navbar-nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/substance/specialists">
+                    <a class="nav-link" routerLink="/main/specialists">
                       <ng-container *ngIf="!isSideBarCollapsed">
                         <i class="fa-solid fa-user-doctor"></i> Specialists
                       </ng-container>
@@ -18,7 +18,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="/substance/resources">
+                    <a class="nav-link" routerLink="/main/resources">
                       <ng-container *ngIf="!isSideBarCollapsed">
                         <i class="fas fa-book"></i> Resources
                       </ng-container>
@@ -28,7 +28,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="/substance/resources">
+                    <a class="nav-link" routerLink="/main/favorites">
                       <ng-container *ngIf="!isSideBarCollapsed">
                         <i class="fa-solid fa-heart"></i> Favorites
                       </ng-container>
@@ -43,15 +43,12 @@
       </div>
   
       <div class="col-lg-10">
-        <!-- Main content of the Substance page -->
-        <h1>Welcome to the Substance Page</h1>
+        <h1>Welcome to the Main Page</h1>
         <router-outlet></router-outlet>
   
-        <!-- Placeholder content for the main section -->
         <div>
           <h2>Main Content</h2>
-          <p>This is the main content of the Substance page.</p>
-          <p>You can add your custom content here.</p>
+          <p>This is the main content of the Main page.</p>
         </div>
       </div>
     </div>
