@@ -8,6 +8,7 @@ import { MainComponent } from "./main/main.component";
 import { ResourcesComponent } from "./resources/resources.component";
 import { HomeComponent } from "./home/home.component";
 import { SpecialistsComponent } from "./specialists/specialists.component";
+import { FavoritesComponent } from "./favorites/favorites.component";
 
 const routes: Routes = [
 
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path: 'main', component: MainComponent, children: [
         {path: 'resources', component: ResourcesComponent},
         {path: 'specialists', component: SpecialistsComponent},
+        {path: 'favorites', component: FavoritesComponent}
     ]},
   
 ]
