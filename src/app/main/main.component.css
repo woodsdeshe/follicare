@@ -1,10 +1,11 @@
-nav {
-    background-color: #799097; 
-}
+
 
 .sidebar {
     height: 100vh;
     transition: width 0.3s;
+    background-color: #7ac0d5;
+    display: flex;
+    flex-direction: column;
   }
   
   .sidebar.collapsed {
@@ -13,6 +14,9 @@ nav {
   
   .logo {
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   img {
