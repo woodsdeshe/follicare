@@ -1,31 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:8080/auth/users';
-  private headers: HttpHeaders = new HttpHeaders();
+constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+login(email: string, password: string): Observable<string> {
+  const credentials = { email: email, password: password };
 
-  register(newUserData: any): Observable<any> {
-    const url = `${this.baseUrl}/register`;
-    return this.http.post(url, newUserData);
-  }
-
-  login(credentials: any): Observable<any> {
-    const url = `${this.baseUrl}/login`;
-    return this.http.post(url, credentials);
-  }
-
-  setJwtToken(token: string): void {
-    this.headers = this.headers.set('Authorization', `Bearer ${token}`);
-  }
-
-  getHeaders(): HttpHeaders {
-    return this.headers;
-  }
+  return this.http.post<any>('http://localhost:8080/auth/users/login', credentials).pipe(map(response => response.token)
+  );
+}
 }
