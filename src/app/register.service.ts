@@ -14,5 +14,5 @@ login(email: string, password: string): Observable<string> {
 
   return this.http.post<any>('http://localhost:8080/auth/users/login', credentials).pipe(map(response => response.token)
   );
-}
+  }
 }
