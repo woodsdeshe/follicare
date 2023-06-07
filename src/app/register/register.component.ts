@@ -53,7 +53,7 @@ register() {
     }
   };
 
-  this.authService.register(registrationData).subscribe(observer);
+  // this.authService.register(registrationData).subscribe(observer);
 }
 
   ngOnInit() {

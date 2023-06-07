@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../register.service';
-import { SharedService } from '../shared.service';
-import { Observer } from 'rxjs';
-import { Router } from '@angular/router';
+import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -10,60 +8,35 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-  constructor(private authService: AuthService, private sharedService: SharedService, private router: Router) {
-    this.sharedService.showLogin$.subscribe((showLogin: boolean) => {
-      this.showLogin = showLogin;
-    })
-  }
+export class LoginComponent {
 
-  showLogin: boolean = false;
+  email: string = '';
+  password: string = '';
 
-  loginData = {
-    email: '',
-    password:''
-  };
+  constructor(private authService: AuthService, private http: HttpClient) {}
 
-  submitLoginForm() {
-    console.log('Login form submitted');
-    console.log(this.loginData);
+  onSubmit(): void {
+    this.authService.login(this.email, this.password)
+      .subscribe(token => {
+        localStorage.setItem('access_token', token); 
+
+        const headers = new HttpHeaders({
+          Authorization: 'Bearer ' + localStorage.getItem('access_token')
+        });
+        const options = { headers: headers };
+        
     
-    this.loginData = {
-      email: '',
-      password: ''
-    };
-    this.showLogin = false;
+        this.http.get('http://localhost:8080/api/profile', options)
+          .subscribe(response => {
+            // Handle the API response
+            console.log('API response:', response);
+          },
+          error => {
+            console.error('API error:', error);
+          }
+          
+          );
+      
+      });
   }
-
-  login() {
-    const apiUrl = 'http://localhost:8080/auth/users/login';
-
-    const loginData = {
-      apiUrl: apiUrl,
-      userData: this.loginData
-    };
-
-
-
-    const observer: Observer<any> = {
-      next: (response) => {
-        console.log('Login complete');
-        this.router.navigate(['/profile']);
-      },
-      error: (err) => {
-        console.log('Login error');
-      },
-      complete: () => {
-      }
-    };
-
-    this.authService.login(loginData).subscribe(observer);
-  }
-
-  ngOnInit(): void {
-      this.sharedService.showLogin$.subscribe((showLogin) => {
-        this.showLogin = showLogin;
-      })
-  }
-
 }
