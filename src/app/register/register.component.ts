@@ -1,38 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/register.service';
+import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
-  form: any = {
-    email: null,
-    password: null
-  };
-  isSuccessful = false;
-  isSignUpFailed = false;
-  errorMessage = '';
+export class RegisterComponent {
+  email: string = '';
+  password: string = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {
-  }
+  register() {
+    const userData = {
+      email: this.email,
+      password: this.password
+    };
 
-  onSubmit(): void {
-    const {email, password } = this.form;
-
-    this.authService.register(email, password).subscribe({
-      next: data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
-      },
-      error: err => {
-        this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
-      }
-    });
+    this.http.post('http://localhost:8080/auth/users/register', userData)
+      .subscribe({
+        next: (response: any) => {
+          // Handle successful registration
+          console.log('Registration successful', response);
+        },
+        error: (error: any) => {
+          // Handle registration error
+          console.error('Registration error', error);
+        }
+      });
   }
 }

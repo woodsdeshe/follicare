@@ -18,7 +18,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" routerLink="/resources">
+                    <a class="nav-link" routerLink="/main/resources">
                       <ng-container *ngIf="!isSideBarCollapsed">
                         <i class="fas fa-book"></i> Resources
                       </ng-container>
@@ -42,14 +42,13 @@
         </nav>
       </div>
   
-      <div class="col-lg-10">
+      <div class="col-sm-10 main-content" [ngClass]="{ 'collapsed': !isSideBarCollapsed }">
         <h1>Welcome to the Main Page</h1>
-
-        <router-outlet></router-outlet>
         <div>
          <app-resources></app-resources>
         </div>
       </div>
     </div>
+    <router-outlet></router-outlet>
   </div>
   
