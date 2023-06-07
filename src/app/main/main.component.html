@@ -10,10 +10,10 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/substance/specialists">
                       <ng-container *ngIf="!isSideBarCollapsed">
-                        <i class="fas fa-users"></i> Specialists
+                        <i class="fa-solid fa-user-doctor"></i> Specialists
                       </ng-container>
                       <ng-container *ngIf="isSideBarCollapsed">
-                        <i class="fas fa-users"></i>
+                        <i class="fa-solid fa-user-doctor"></i>
                       </ng-container>
                     </a>
                   </li>
@@ -24,6 +24,16 @@
                       </ng-container>
                       <ng-container *ngIf="isSideBarCollapsed">
                         <i class="fas fa-book"></i>
+                      </ng-container>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/substance/resources">
+                      <ng-container *ngIf="!isSideBarCollapsed">
+                        <i class="fa-solid fa-heart"></i> Favorites
+                      </ng-container>
+                      <ng-container *ngIf="isSideBarCollapsed">
+                        <i class="fa-solid fa-heart"></i>
                       </ng-container>
                     </a>
                   </li>
