@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { HomeImgComponent } from './home-img/home-img.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     ProfileComponent,
     FavoritesComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeImgComponent
   ],
   imports: [
     BrowserModule,

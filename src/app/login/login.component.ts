@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../register.service';
 import { SharedService } from '../shared.service';
 import { Observer } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { Observer } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  constructor(private authService: AuthService, private sharedService: SharedService) {
+  constructor(private authService: AuthService, private sharedService: SharedService, private router: Router) {
     this.sharedService.showLogin$.subscribe((showLogin: boolean) => {
       this.showLogin = showLogin;
     })
@@ -47,6 +48,7 @@ export class LoginComponent implements OnInit{
     const observer: Observer<any> = {
       next: (response) => {
         console.log('Login complete');
+        this.router.navigate(['/profile']);
       },
       error: (err) => {
         console.log('Login error');
