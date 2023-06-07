@@ -1,8 +1,11 @@
-<div *ngFor="let specialist of specialists">
-    <h2>{{ specialist.firsttName }}</h2>
-    <h2>{{ specialist.lastName }}</h2>
-    <p>{{ specialist.specialty}}</p>
-    <p>{{ specialist.zipCode}}</p>
-    <p>{{ specialist.email}}</p>
-    <p>{{ specialist.phoneNumber}}</p>
+<div class="specialists-grid">
+    <div *ngFor="let specialist of specialists" class="specialist-card">
+      <h2>{{ specialist.firstName }}</h2>
+      <h2>{{ specialist.lastName }}</h2>
+      <p>{{ specialist.specialty}}</p>
+      <p>{{ specialist.zipCode}}</p>
+      <p>{{ specialist.email}}</p>
+      <p>{{ specialist.phoneNumber}}</p>
+    </div>
   </div>
+  
