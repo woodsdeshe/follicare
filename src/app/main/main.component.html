@@ -9,9 +9,13 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" routerLink="/substance/specialists">Specialists</a>
+                <i *ngIf="!isSideBarCollapsed" class="fas fa-user"></i>
+                <span *ngIf="!isSideBarCollapsed">Specialists</span>
               </li>
               <li class="nav-item">
                 <a class="nav-link" routerLink="/substance/resources">Resources</a>
+                <i *ngIf="!isSideBarCollapsed" class="fas fa-book"></i>
+                <span *ngIf="!isSideBarCollapsed">Resources</span>
               </li>
             </ul>
           </div>
