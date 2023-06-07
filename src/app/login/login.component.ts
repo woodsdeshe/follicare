@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -31,6 +32,14 @@ export class LoginComponent {
         error: (error: any) => {
           // Handle login error
           console.error('Login error', error);
+
+          if (error.status === 401) {
+            this.errorMessage = 'Wrong email or password. Please try again.';
+          } else if (error.status === 404) {
+            this.errorMessage = 'User not found. Please register.';
+          } else {
+            this.errorMessage = 'An error has occurred. Please try again'
+          }
         }
       });
   }
