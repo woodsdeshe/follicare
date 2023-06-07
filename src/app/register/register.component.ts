@@ -8,7 +8,6 @@ import { AuthService } from '../services/register.service';
 })
 export class RegisterComponent implements OnInit {
   form: any = {
-    username: null,
     email: null,
     password: null
   };

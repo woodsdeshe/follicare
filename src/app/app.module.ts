@@ -15,6 +15,7 @@ import { HomeImgComponent } from './home-img/home-img.component';
 import { JwtInterceptor } from './jwt.interceptor';
 import { MainComponent } from './main/main.component';
 import { httpInterceptorProviders } from './http.interceptor';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -35,6 +36,7 @@ import { httpInterceptorProviders } from './http.interceptor';
     HttpClientModule,
     NgbModule,
     FormsModule,
+    AppRoutingModule
 
   ],
   providers: [
