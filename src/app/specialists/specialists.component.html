@@ -1,11 +1,15 @@
 <div class="specialists-grid">
-    <div *ngFor="let specialist of specialists" class="specialist-card">
-      <h2>{{ specialist.firstName }}</h2>
-      <h2>{{ specialist.lastName }}</h2>
-      <p>{{ specialist.specialty}}</p>
-      <p>{{ specialist.zipCode}}</p>
-      <p>{{ specialist.email}}</p>
-      <p>{{ specialist.phoneNumber}}</p>
-    </div>
+  <form (ngSubmit)="fetchSpecialists()">
+    <input type="text" [(ngModel)]="specialty" name="specialty" placeholder="Specialty">
+    <input type="text" [(ngModel)]="zipCode" name="zipCode" placeholder="Zip Code">
+    <button type="submit">Search</button>
+  </form>
+  <div *ngFor="let specialist of specialists" class="specialist-card">
+    <h2>{{ specialist.firstName }}</h2>
+    <h2>{{ specialist.lastName }}</h2>
+    <p>{{ specialist.specialty}}</p>
+    <p>{{ specialist.zipCode}}</p>
+    <p>{{ specialist.email}}</p>
+    <p>{{ specialist.phoneNumber}}</p>
   </div>
-  
+</div>

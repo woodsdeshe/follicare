@@ -1,41 +1,28 @@
 <div class="background">
-<nav class="navbar navbar-expand-md bg-body-tertiary background">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">
-        <img src="../../assets/Follicare Logo.png">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" (click)="showRegister()" >Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="showLogin()">Log In</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-md bg-body-tertiary background">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">
+          <img src="../../assets/Follicare Logo.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" (click)="showRegister()" >Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="showLogin()">Log In</a>
+          </li>
+        </ul>
+      </div>
+     
     </div>
-   
+  </nav>
+  <div class="col-lg-10 main-content">
+    <router-outlet></router-outlet>
   </div>
-</nav>
-<div class="col-lg-10 main-content">
-  <router-outlet></router-outlet>
-</div>
-</div>
-
-<div class="sidebar-content">
-  <div class="sidebar-image">
-    <app-home-img></app-home-img>
   </div>
-  <div class="sidebar-component">
-    <ng-container *ngIf="showLoginComponent">
-      <app-login></app-login>
-    </ng-container>
-
-    <ng-container *ngIf="showRegisterComponent">
-      <app-register></app-register>
-    </ng-container>
-  </div>
-</div>
+  
+ 

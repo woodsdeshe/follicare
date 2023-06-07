@@ -7,22 +7,3 @@ img {
     margin: 0;
     padding: 0;
 }
-
-.background {
-    background-color: rgba(26, 127, 216, 0.277);
-}
-
-.sidebar-content {
-    display: flex;
-    height: 100vh;
-  }
-  
-  .sidebar-image {
-    flex: 1;
-  }
-  
-  .sidebar-component {
-    flex: 1;
-    overflow-y: auto;
-  }
-  
