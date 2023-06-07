@@ -17,6 +17,7 @@ import { MainComponent } from './main/main.component';
 import { httpInterceptorProviders } from './http.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ResourcesComponent } from './resources/resources.component';
+import { SpecialistsComponent } from './specialists/specialists.component';
 
 
 
@@ -31,7 +32,8 @@ import { ResourcesComponent } from './resources/resources.component';
     HeaderComponent,
     HomeImgComponent,
     MainComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    SpecialistsComponent
   ],
   imports: [
     BrowserModule,
