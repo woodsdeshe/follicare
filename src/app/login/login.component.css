@@ -1,9 +1,16 @@
+
+
 .container {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
     height: 100vh;
     padding: 20px;
+    
+  }
+
+  .card-body {
+    background: transparent;
   }
 
 button {

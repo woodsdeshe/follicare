@@ -1,0 +1,14 @@
+.background {
+    position: relative;
+  }
+  
+  .carousel-container {
+    position: relative;
+  }
+  
+  .login-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
