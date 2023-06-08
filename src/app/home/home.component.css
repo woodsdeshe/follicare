@@ -1,14 +1,17 @@
+/* Set the position of the background element */
 .background {
-    position: relative;
-  }
-  
-  .carousel-container {
-    position: relative;
-  }
-  
-  .login-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-  }
+  position: relative;
+}
+
+/* Set the position of the carousel container */
+.carousel-container {
+  position: relative;
+}
+
+/* Set the position and stacking order of the login container */
+.login-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
