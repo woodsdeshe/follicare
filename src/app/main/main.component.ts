@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, NavigationEnd} from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { AuthService } from '../services/register.service';
 import { filter, map } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-main',
@@ -13,12 +12,12 @@ export class MainComponent implements OnInit {
   content?: string;
   isSideBarCollapsed: boolean = true;
   pageTitle: string = '';
-  ;
 
+  constructor(private router: Router, private authService: AuthService, private activatedRoute: ActivatedRoute) {}
 
-  constructor(private router: Router, private authService: AuthService, private activatdRoute: ActivatedRoute) {}
-
-
+  /**
+   * Toggles the sidebar collapse state.
+   */
   toggleSidebar(): void {
     this.isSideBarCollapsed = !this.isSideBarCollapsed;
   }
@@ -27,7 +26,7 @@ export class MainComponent implements OnInit {
     this.router.events
       .pipe(
         filter((event) => event instanceof NavigationEnd),
-        map(() => this.activatdRoute),
+        map(() => this.activatedRoute),
         map((route) => {
           while (route.firstChild) {
             route = route.firstChild;
@@ -41,6 +40,4 @@ export class MainComponent implements OnInit {
         this.pageTitle = title;
       });
   }
-  
 }
-
