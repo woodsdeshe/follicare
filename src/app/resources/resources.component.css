@@ -1,8 +1,10 @@
 .container {
+  /* Container element with padding */
   padding: 20px;
 }
 
 h1 {
+  /* Heading style */
   font-size: 24px;
   font-weight: bold;
   color: #7ac0d5;
@@ -11,12 +13,14 @@ h1 {
 }
 
 .resources-grid {
+  /* Grid container for resources */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
 .resource-card {
+  /* Resource card style */
   border: 1px solid #ccc;
   padding: 10px;
   background-color: #79a8b6;
@@ -26,21 +30,24 @@ h1 {
 }
 
 .resource-card:hover {
+  /* Hover effect for resource card */
   background-color: #577983;
 }
 
-
 .resource-card h2 {
+  /* Heading style within resource card */
   font-size: 18px;
   margin-bottom: 10px;
 }
 
 .resource-card p {
+  /* Paragraph style within resource card */
   font-size: 14px;
   line-height: 1.5;
 }
 
 .center-container {
+  /* Centered container */
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -48,12 +55,14 @@ h1 {
 }
 
 .search-container {
+  /* Container for search */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .search-container form {
+  /* Form within search container */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +70,6 @@ h1 {
 
 .search-container input[type="text"],
 .search-container button {
+  /* Style for input text and button within search container */
   margin: 0 5px;
 }
-
