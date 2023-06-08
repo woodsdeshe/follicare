@@ -1,12 +1,23 @@
 <div class="container">
+  <!-- Card -->
   <div class="card">
+    <!-- Card Header -->
     <div class="card-header">
       <h2>Sign Up</h2>
     </div>
+
+    <!-- Card Body -->
     <div class="card-body">
+      <!-- Email Input -->
       <input type="email" placeholder="Email" [(ngModel)]="email">
+
+      <!-- Password Input -->
       <input type="password" placeholder="Password" [(ngModel)]="password">
+
+      <!-- Sign Up Button -->
       <button (click)="register()">Sign Up</button>
+
+      <!-- Error Message -->
       <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
     </div>
   </div>

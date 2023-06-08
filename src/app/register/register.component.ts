@@ -11,9 +11,13 @@ export class RegisterComponent {
   password: string = '';
   errorMessage: string = '';
 
-
   constructor(private http: HttpClient) {}
 
+  /**
+   * Performs user registration.
+   * Sends a POST request to the server with user data (email and password).
+   * Handles the response and any errors that occur during registration.
+   */
   register() {
     const userData = {
       email: this.email,
