@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class RegisterComponent {
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
+
 
   constructor(private http: HttpClient) {}
 
@@ -26,7 +28,7 @@ export class RegisterComponent {
         },
         error: (error: any) => {
           // Handle registration error
-          console.error('Registration error', error);
+          this.errorMessage = 'Registration error';
         }
       });
   }

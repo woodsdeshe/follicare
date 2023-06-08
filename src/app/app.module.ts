@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ResourcesComponent } from './resources/resources.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
 import { HomeInfoComponent } from './home-info/home-info.component';
+import { ScrollAnimationDirective } from './scroll-animation.directive';
 
 
 
@@ -35,7 +36,8 @@ import { HomeInfoComponent } from './home-info/home-info.component';
     MainComponent,
     ResourcesComponent,
     SpecialistsComponent,
-    HomeInfoComponent
+    HomeInfoComponent,
+    ScrollAnimationDirective
   ],
   imports: [
     BrowserModule,
