@@ -1,19 +1,20 @@
+<!-- Search Form -->
 <div class="center-container">
   <form (ngSubmit)="fetchSpecialists()">
-    <input type="text" [(ngModel)]="specialty" name="specialty"  placeholder="Specialty">
+    <input type="text" [(ngModel)]="specialty" name="specialty" placeholder="Specialty">
     <input type="text" [(ngModel)]="zipCode" name="zipCode" placeholder="Zip Code">
     <button type="submit">Search</button>
   </form>
 </div>
 
-  <div class="specialists-grid">
-    <div *ngFor="let specialist of specialists" class="specialist-card">
-      <h2>{{ specialist.fullName }}</h2>
-      <h3>{{ specialist.title }}</h3>
-      <p><strong>Specialty:</strong> {{ specialist.specialty}}</p>
-      <p><strong>Location:</strong> {{ specialist.zipCode}}</p>
-      <p><strong>Email:</strong> {{ specialist.email}}</p>
-      <p><strong>Phone Number:</strong> {{ specialist.phoneNumber}}</p>
-    </div>
+<!-- Specialists Grid -->
+<div class="specialists-grid">
+  <div *ngFor="let specialist of specialists" class="specialist-card">
+    <h2>{{ specialist.fullName }}</h2>
+    <h3>{{ specialist.title }}</h3>
+    <p><strong>Specialty:</strong> {{ specialist.specialty }}</p>
+    <p><strong>Location:</strong> {{ specialist.zipCode }}</p>
+    <p><strong>Email:</strong> {{ specialist.email }}</p>
+    <p><strong>Phone Number:</strong> {{ specialist.phoneNumber }}</p>
   </div>
-
+</div>
