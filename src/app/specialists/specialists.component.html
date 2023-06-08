@@ -8,8 +8,8 @@
 
   <div class="specialists-grid">
     <div *ngFor="let specialist of specialists" class="specialist-card">
-      <h2>{{ specialist.firstName }}</h2>
-      <h2>{{ specialist.lastName }}</h2>
+      <h2>{{ specialist.fullName }}</h2>
+      <h3>{{ specialist.title }}</h3>
       <p>{{ specialist.specialty}}</p>
       <p>{{ specialist.zipCode}}</p>
       <p>{{ specialist.email}}</p>

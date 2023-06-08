@@ -1,41 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 
 const AUTH_API = 'http://localhost:8080/api/auth/users/';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
-
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class AuthService {
-constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-login(email: string, password: string): Observable<any> {
-  const credentials = { email: email, password: password };
+  login(email: string, password: string): Observable<any> {
+    const credentials = { email: email, password: password };
 
-  return this.http.post(
-    AUTH_API + 'login',
-    credentials,
-    httpOptions
-  ).pipe(
-    map((response: any) => {
-      const token = response.access_token; // Assuming the token is returned as 'access_token'
-      if (token) {
-        localStorage.setItem('access_token', token); // Store the token in local storage
-      }
-      return response;
-    })
-  );
-}
-
+   
+    return this.http.post(
+      AUTH_API + 'login',
+      credentials,
+      httpOptions
+    ).pipe(
+      tap((response: any) => {
+        // Store the token in localStorage
+        localStorage.setItem('token', response.token);
+      })
+    );
+  }
 
 
   register(email: string, password: string): Observable<any> {
@@ -49,19 +44,8 @@ login(email: string, password: string): Observable<any> {
     );
   }
 
-  getUserProfile(userId: string): Observable<any> {
-    const apiUrl = AUTH_API + `profile/${userId}`;
+  getUserProfile(): Observable<any> {
+    const apiUrl = AUTH_API + 'profile';
     return this.http.get(apiUrl, httpOptions);
-  }
-
-  getCurrentUserId(): string | null {
-    // Retrieve the token from local storage
-    const token = localStorage.getItem('access_token');
-    if (token) {
-      // Parse the token to extract the user ID
-      const tokenPayload = JSON.parse(atob(token.split('.')[1]));
-      return tokenPayload.userId;
-    }
-    return null;
   }
 }
