@@ -1,3 +1,4 @@
+/* Styles for container */
 .container {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
   padding: 20px;
 }
 
+/* Styles for card */
 .card {
   width: 300px;
   height: 300px;
@@ -15,6 +17,7 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
 }
 
+/* Styles for card header */
 .card-header {
   background-color: #7AC0D5;
   color: hsl(0, 0%, 0%);
@@ -22,9 +25,10 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   text-align: center;
-  font-weight:bolder ;
+  font-weight: bolder;
 }
 
+/* Styles for card body */
 .card-body {
   display: flex;
   flex-direction: column;
@@ -33,10 +37,12 @@
   padding: 10px;
 }
 
+/* Styles for input */
 input {
   margin-bottom: 10px;
 }
 
+/* Styles for button */
 button {
   background-color: #7AC0D5;
   color: #ffffff;
@@ -50,11 +56,13 @@ button:hover {
   background-color: #797979;
 }
 
+/* Styles for inputs and buttons within card body */
 .card-body input,
 .card-body button {
   margin: 5px 0;
 }
 
+/* Styles for error message */
 .error-message {
   color: red;
 }
