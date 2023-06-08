@@ -48,4 +48,20 @@ login(email: string, password: string): Observable<any> {
       httpOptions
     );
   }
+
+  getUserProfile(userId: string): Observable<any> {
+    const apiUrl = AUTH_API + `profile/${userId}`;
+    return this.http.get(apiUrl, httpOptions);
+  }
+
+  getCurrentUserId(): string | null {
+    // Retrieve the token from local storage
+    const token = localStorage.getItem('access_token');
+    if (token) {
+      // Parse the token to extract the user ID
+      const tokenPayload = JSON.parse(atob(token.split('.')[1]));
+      return tokenPayload.userId;
+    }
+    return null;
+  }
 }

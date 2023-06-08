@@ -16,7 +16,8 @@ const routes: Routes = [
     {path: 'main', component: MainComponent, children: [
         {path: 'resources', component: ResourcesComponent},
         {path: 'specialists', component: SpecialistsComponent},
-        {path: 'favorites', component: FavoritesComponent}
+        {path: 'favorites', component: FavoritesComponent},
+        {path: 'profile', component: ProfileComponent}
     ]},
   
 ]
