@@ -1,5 +1,4 @@
-import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 
 
 @Component({
@@ -23,5 +22,4 @@ export class HomeInfoComponent{
     this.showRegisterComponent = true;
     this.showLoginComponent = false;
   }
- 
 }

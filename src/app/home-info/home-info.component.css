@@ -71,3 +71,18 @@
 .grid-item:nth-child(6) {
   grid-column: span 3;
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #7ac0d5;
+  color: #fff;
+  text-decoration: none;
+  display: none;
+}
+
+.back-to-top.show {
+  display: block;
+}

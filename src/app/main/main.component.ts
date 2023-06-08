@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute, NavigationEnd} from '@angular/router';
 import { AuthService } from '../services/register.service';
+import { filter, map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-main',
@@ -10,9 +12,11 @@ import { AuthService } from '../services/register.service';
 export class MainComponent implements OnInit {
   content?: string;
   isSideBarCollapsed: boolean = true;
-  userProfile: any;
+  pageTitle: string = '';
+  ;
 
-  constructor(private router: Router, private authService: AuthService) {}
+
+  constructor(private router: Router, private authService: AuthService, private activatdRoute: ActivatedRoute) {}
 
 
   toggleSidebar(): void {
@@ -20,16 +24,22 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.getUserProfile().subscribe(
-      (response: any) => {
-        this.userProfile = response;
-        console.log('User Profile:', this.userProfile);
-
-      },
-      (error: any) => {
-        console.error("Couldn't fetch user profile");
-      }
-    );
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        map(() => this.activatdRoute),
+        map((route) => {
+          while (route.firstChild) {
+            route = route.firstChild;
+          }
+          return route;
+        }),
+        filter((route) => route.outlet === 'primary'),
+        map((route) => route.snapshot.data['title'])
+      )
+      .subscribe((title) => {
+        this.pageTitle = title;
+      });
   }
   
 }
