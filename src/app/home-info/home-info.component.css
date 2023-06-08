@@ -86,3 +86,16 @@
 .back-to-top.show {
   display: block;
 }
+
+h3 {
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+.features {
+  font-size: large;
+  
+}
