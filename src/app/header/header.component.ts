@@ -19,4 +19,14 @@ export class HeaderComponent {
     this.showRegisterComponent = true;
     this.showLoginComponent = false;
   }
+
+  toggleLogin() {
+    this.showLoginComponent = !this.showLoginComponent;
+    this.showRegisterComponent = false;
+  }
+  
+  toggleRegister() {
+    this.showRegisterComponent = !this.showRegisterComponent;
+    this.showLoginComponent = false;
+  }
 }
