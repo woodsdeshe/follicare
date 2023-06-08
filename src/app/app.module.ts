@@ -18,7 +18,6 @@ import { httpInterceptorProviders } from './http.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ResourcesComponent } from './resources/resources.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { HomeInfoComponent } from './home-info/home-info.component';
 
 
@@ -44,7 +43,6 @@ import { HomeInfoComponent } from './home-info/home-info.component';
     NgbModule,
     FormsModule,
     AppRoutingModule,
-    CarouselModule.forRoot()
 
   ],
   providers: [
