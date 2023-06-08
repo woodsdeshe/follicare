@@ -45,13 +45,15 @@
       </nav>
     </div>
 
+    
     <div class="col-sm-10 main-content" [ngClass]="{ 'collapsed': !isSideBarCollapsed }">
       <!-- Page title -->
       <h1 class="page-title">{{ pageTitle }}</h1>
-      <div>
+      <!-- Main content -->
+      <div class="content-wrapper">
+        <router-outlet *ngIf="!isLandingPage"></router-outlet>
+        <app-landing-page *ngIf="isLandingPage"></app-landing-page>
       </div>
-      <!-- Router outlet for dynamic content -->
-      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

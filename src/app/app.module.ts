@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ResourcesComponent } from './resources/resources.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
 import { HomeInfoComponent } from './home-info/home-info.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 
@@ -28,7 +29,8 @@ import { HomeInfoComponent } from './home-info/home-info.component';
     MainComponent,
     ResourcesComponent,
     SpecialistsComponent,
-    HomeInfoComponent
+    HomeInfoComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

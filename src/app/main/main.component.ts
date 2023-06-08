@@ -12,8 +12,17 @@ export class MainComponent implements OnInit {
   content?: string;
   isSideBarCollapsed: boolean = true;
   pageTitle: string = '';
+  isLandingPage: boolean = false;
 
-  constructor(private router: Router, private authService: AuthService, private activatedRoute: ActivatedRoute) {}
+
+  constructor(private router: Router, private authService: AuthService, private activatedRoute: ActivatedRoute) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.setPageTitle();
+        this.checkIfLandingPage();
+      }
+    });
+  }
 
   /**
    * Toggles the sidebar collapse state.
@@ -39,5 +48,28 @@ export class MainComponent implements OnInit {
       .subscribe((title) => {
         this.pageTitle = title;
       });
+  }
+
+  setPageTitle(): void {
+    const currentRoute = this.router.routerState.snapshot.url;
+    switch (currentRoute) {
+      case '/main':
+        this.pageTitle = 'Main Page';
+        break;
+      case '/main/specialists':
+        this.pageTitle = 'Specialists';
+        break;
+      case '/main/resources':
+        this.pageTitle = 'Resources';
+        break;
+      default:
+        this.pageTitle = '';
+        break;
+    }
+  }
+
+  checkIfLandingPage(): void {
+    const currentRoute = this.router.routerState.snapshot.url;
+    this.isLandingPage = currentRoute === '/main';
   }
 }
