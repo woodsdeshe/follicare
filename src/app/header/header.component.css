@@ -9,9 +9,18 @@ img {
 }
 
   
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+  }
+  
   .content-container {
     position: relative;
   }
+  
   
   .slide-container {
     position: absolute;
