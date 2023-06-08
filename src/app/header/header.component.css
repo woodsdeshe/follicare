@@ -1,0 +1,34 @@
+a {
+  cursor: pointer;
+}
+
+li {
+  color: #799097 ;
+}
+
+img {
+  width: 100px;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-container {
+  position: relative;
+}
+
+.login-register-container {
+  position: fixed;
+  top: 50%;
+  right: -100%;
+  transform: translate(0, -50%);
+  transition: right 0.3s ease;
+  z-index: 2;
+}
+
+.slide-in {
+  right: 50px;
+}
+
+.slide-out {
+  right: -100%;
+}

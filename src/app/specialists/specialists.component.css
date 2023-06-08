@@ -1,0 +1,82 @@
+/* Center container */
+.center-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.center-container form {
+  display: flex;
+  align-items: center;
+}
+
+.center-container form input[type="text"] {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.center-container form button {
+  padding: 5px 10px;
+  background-color: #7ac0d5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Specialists grid */
+.specialists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Specialist card */
+.specialist-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+  border-radius: 3px;
+}
+
+.specialist-card:hover {
+  background-color: #79a8b6;
+  color: #fff;
+}
+
+img {
+  height: 100px;
+  width: 200px;
+}
+
+.specialists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.specialist-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.specialist-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.specialist-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.specialist-details {
+  width: 100%;
+}

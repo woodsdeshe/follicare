@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2  sidebar" [ngClass]="{ 'collapsed': isSideBarCollapsed }">
+      <div class="logo" (click)="toggleSidebar()">
+        <img src="../../assets/Follicare Sub Logo.png" alt="Logo">
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': !isSideBarCollapsed}">
+          <ul class="navbar-nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/main/specialists">
+                <ng-container *ngIf="!isSideBarCollapsed">
+                  <i class="fa-solid fa-user-doctor"></i> Specialists
+                </ng-container>
+                <ng-container *ngIf="isSideBarCollapsed">
+                  <i class="fa-solid fa-user-doctor"></i>
+                </ng-container>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/main/resources">
+                <ng-container *ngIf="!isSideBarCollapsed">
+                  <i class="fas fa-book"></i> Resources
+                </ng-container>
+                <ng-container *ngIf="isSideBarCollapsed">
+                  <i class="fas fa-book"></i>
+                </ng-container>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/">
+                <ng-container *ngIf="!isSideBarCollapsed">
+                  <i class="fa-solid fa-right-from-bracket"></i> Sign Out
+                </ng-container>
+                <ng-container *ngIf="isSideBarCollapsed">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                </ng-container>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="col-sm-10 main-content" [ngClass]="{ 'collapsed': !isSideBarCollapsed }">
+      <h1 class="page-title">{{ pageTitle }}</h1>
+      <div>
+      </div>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

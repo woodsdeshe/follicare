@@ -1,0 +1,19 @@
+<div class="center-container">
+  <div class="description">
+    <h3>Explore Our Resources</h3>
+    <p>Discover a wealth of information and helpful resources related to hair disorders. Our resources cover a wide range of topics, including causes, symptoms, treatments, and self-care tips. Start your journey to better understanding and managing your hair health today.</p>
+  </div>
+  <div class="search-container">
+    <form (ngSubmit)="fetchResources()">
+      <input type="text" [(ngModel)]="partialTitle" name="partialTitle" placeholder="Title">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</div>
+
+<div class="resources-grid">
+  <div *ngFor="let resource of resources" class="resource-card">
+    <h2>{{ resource.title }}</h2>
+    <p>{{ resource.description }}</p>
+  </div>
+</div>

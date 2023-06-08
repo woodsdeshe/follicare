@@ -1,0 +1,101 @@
+/* Brand colors */
+.brand-color-1 {
+  background-color: #797979;
+}
+
+.brand-color-2 {
+  background-color: #799097;
+}
+
+.brand-color-3 {
+  background-color: #79a8b6;
+}
+
+.brand-color-4 {
+  background-color: #7ac0d5;
+}
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Grid item */
+.grid-item {
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Grid item image */
+.grid-item.image {
+  text-align: center;
+}
+
+.grid-item.image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Grid item large */
+.grid-item.grid-item-large {
+  grid-column: span 2;
+}
+
+/* Apply brand colors to grid items */
+.grid-item:nth-child(2) {
+  background-color: #797979;
+}
+
+.grid-item:nth-child(3) {
+  background-color: #799097;
+}
+
+.grid-item:nth-child(5) {
+  background-color: #79a8b6;
+}
+
+.grid-item:nth-child(6),
+.grid-item:nth-child(7) {
+  background-color: #7ac0d5;
+}
+
+/* Ensure last two grid items fit evenly on the same row */
+.grid-item:nth-child(6) {
+  grid-column: span 3;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #7ac0d5;
+  color: #fff;
+  text-decoration: none;
+  display: none;
+}
+
+.back-to-top.show {
+  display: block;
+}
+
+h3 {
+  text-align: center;
+}
+
+p{
+  text-align: center;
+}
+
+.features {
+  font-size: large;
+  
+}
