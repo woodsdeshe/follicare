@@ -1,0 +1,34 @@
+.website-info {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .website-info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .website-info h3 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .website-info p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  .website-info ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .website-info li {
+    margin-bottom: 5px;
+  }
+  

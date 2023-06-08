@@ -18,6 +18,8 @@ import { httpInterceptorProviders } from './http.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ResourcesComponent } from './resources/resources.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { HomeInfoComponent } from './home-info/home-info.component';
 
 
 
@@ -33,14 +35,16 @@ import { SpecialistsComponent } from './specialists/specialists.component';
     HomeImgComponent,
     MainComponent,
     ResourcesComponent,
-    SpecialistsComponent
+    SpecialistsComponent,
+    HomeInfoComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CarouselModule.forRoot()
 
   ],
   providers: [
