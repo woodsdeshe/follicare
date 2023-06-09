@@ -102,3 +102,57 @@ p {
 .features {
   font-size: large;
 }
+
+/* CSS for mobile responsiveness */
+@media (max-width: 767px) {
+  .grid-container {
+    display: block;
+  }
+
+  .grid-item {
+    margin-bottom: 20px;
+  }
+
+  .grid-item.image {
+    text-align: center;
+  }
+
+  .fade-in {
+    animation-delay: 0s;
+  }
+}
+
+/* CSS for mobile responsiveness */
+@media (max-width: 767px) {
+  .grid-container {
+    display: block;
+  }
+
+  .grid-item {
+    margin-bottom: 20px;
+  }
+
+  .grid-item.image {
+    text-align: center;
+  }
+
+  .fade-in {
+    animation-delay: 0s;
+  }
+}
+
+/* Additional CSS for tablet responsiveness (optional) */
+@media (max-width: 991px) {
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+}
+
+/* Additional CSS for larger screens (optional) */
+@media (min-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+}
