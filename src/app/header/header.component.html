@@ -1,17 +1,26 @@
 <div class="background">
+  <!-- Navigation bar -->
   <nav class="navbar navbar-expand-md bg-body-tertiary background">
     <div class="container-fluid">
+      <!-- Brand logo -->
       <a class="navbar-brand" routerLink="/">
-          <img src="../../assets/Follicare Logo.png">
+        <img src="../../assets/Follicare Logo.png">
       </a>
+
+      <!-- Toggle button for collapsing the navigation menu -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+      <!-- Navigation menu -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <!-- Sign Up link -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" (click)="toggleRegister()">Sign Up</a>
           </li>
+
+          <!-- Log In link -->
           <li class="nav-item">
             <a class="nav-link" (click)="toggleLogin()">Log In</a>
           </li>
@@ -20,10 +29,17 @@
     </div>
   </nav>
 
+  <!-- Carousel container -->
   <div class="carousel-container">
+    <!-- Home image component -->
     <app-home-img></app-home-img>
+
+    <!-- Login/Register container -->
     <div class="login-register-container" [ngClass]="{'slide-in': showLoginComponent || showRegisterComponent, 'slide-out': !(showLoginComponent || showRegisterComponent)}">
+      <!-- Login component (visible if showLoginComponent is true) -->
       <app-login *ngIf="showLoginComponent"></app-login>
+
+      <!-- Register component (visible if showRegisterComponent is true) -->
       <app-register *ngIf="showRegisterComponent"></app-register>
     </div>
   </div>

@@ -15,20 +15,23 @@ export class ResourcesComponent implements OnInit {
     this.partialTitle = '';
   }
 
-
-
   ngOnInit(): void {
+    // Subscribe to query params changes
     this.route.queryParams.subscribe(params => {
       this.partialTitle = params['partialTitle'];
       if (this.partialTitle) {
+        // Fetch resources based on partial title if provided
         this.fetchResources();
       } else {
+        // Fetch all resources if no partial title is provided
         this.fetchAllResources();
       }
     });
   }
   
-
+  /**
+   * Fetches all resources from the API
+   */
   fetchAllResources(): void {
     this.http.get<any[]>('http://localhost:8080/api/resources/all')
       .subscribe(
@@ -42,6 +45,9 @@ export class ResourcesComponent implements OnInit {
       );
   }
 
+  /**
+   * Fetches resources based on partial title from the API
+   */
   fetchResources(): void {
     let apiUrl = 'http://localhost:8080/api/resources';
   
@@ -60,5 +66,4 @@ export class ResourcesComponent implements OnInit {
         }
       );
   }
-  
 }

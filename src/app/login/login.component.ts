@@ -14,6 +14,11 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  /**
+   * Performs the login action by sending user credentials to the server.
+   * If the login is successful, it redirects to the main page.
+   * If there is an error, it displays an appropriate error message.
+   */
   login() {
     const userData = {
       email: this.email,

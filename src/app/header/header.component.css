@@ -1,21 +1,26 @@
+/* Set the cursor to a pointer for all anchor tags */
 a {
   cursor: pointer;
 }
 
+/* Set the color of list items */
 li {
-  color: #799097 ;
+  color: #799097;
 }
 
+/* Set the width, margin, and padding of images */
 img {
   width: 100px;
   margin: 0;
   padding: 0;
 }
 
+/* Set the position of the carousel container */
 .carousel-container {
   position: relative;
 }
 
+/* Set the position, alignment, transition, and z-index of the login/register container */
 .login-register-container {
   position: fixed;
   top: 50%;
@@ -25,10 +30,12 @@ img {
   z-index: 2;
 }
 
+/* Slide-in animation for the login/register container */
 .slide-in {
   right: 50px;
 }
 
+/* Slide-out animation for the login/register container */
 .slide-out {
   right: -100%;
 }

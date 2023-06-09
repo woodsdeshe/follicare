@@ -1,18 +1,18 @@
+/* Header container */
 .header-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-  }
-  
-  .footer-container {
-    /* Your footer styles */
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+  /* Position the header container at the top of the viewport */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
 
-
-
+/* Footer container */
+.footer-container {
+  /* Position the footer container at the bottom of the viewport */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

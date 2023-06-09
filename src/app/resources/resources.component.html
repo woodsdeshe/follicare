@@ -1,9 +1,14 @@
+<!-- Container for the main content -->
 <div class="center-container">
+  <!-- Description section -->
   <div class="description">
     <h3>Explore Our Resources</h3>
     <p>Discover a wealth of information and helpful resources related to hair disorders. Our resources cover a wide range of topics, including causes, symptoms, treatments, and self-care tips. Start your journey to better understanding and managing your hair health today.</p>
   </div>
+  
+  <!-- Search container -->
   <div class="search-container">
+    <!-- Search form -->
     <form (ngSubmit)="fetchResources()">
       <input type="text" [(ngModel)]="partialTitle" name="partialTitle" placeholder="Title">
       <button type="submit">Search</button>
@@ -11,7 +16,9 @@
   </div>
 </div>
 
+<!-- Grid for displaying resources -->
 <div class="resources-grid">
+  <!-- Resource cards -->
   <div *ngFor="let resource of resources" class="resource-card">
     <h2>{{ resource.title }}</h2>
     <p>{{ resource.description }}</p>
