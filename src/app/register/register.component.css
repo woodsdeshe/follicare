@@ -1,0 +1,88 @@
+/**
+ * Styles for the container element.
+ */
+ .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  /**
+   * Styles for the card element.
+   */
+  .card {
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+  }
+  
+  /**
+   * Styles for the card header element.
+   */
+  .card-header {
+    background-color: #7AC0D5;
+    color: #ffffff;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  /**
+   * Styles for the card body element.
+   */
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  /**
+   * Styles for the input elements.
+   */
+  input {
+    margin-bottom: 10px;
+  }
+  
+  /**
+   * Styles for the button element.
+   */
+  button {
+    background-color: #7AC0D5;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /**
+   * Styles for the button element on hover.
+   */
+  button:hover {
+    background-color: #797979;
+  }
+  
+  /**
+   * Styles for the input and button elements within the card body.
+   */
+  .card-body input,
+  .card-body button {
+    margin: 5px 0;
+  }
+  
+  /**
+   * Styles for the error message element.
+   */
+  .error-message {
+    color: red;
+  }
+  
