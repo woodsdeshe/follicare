@@ -1,0 +1,103 @@
+.container {
+  /* Container element with padding */
+  padding: 20px;
+}
+
+h1 {
+  /* Heading style */
+  font-size: 24px;
+  font-weight: bold;
+  color: #7ac0d5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.landing-cards {
+  /* Grid container for landing page cards */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.landing-card {
+  /* Landing page card style */
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #79a8b6;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.landing-card:hover {
+  /* Hover effect for landing page card */
+  background-color: #577983;
+  cursor: pointer;
+}
+
+.landing-card i {
+  /* Icon style within landing page card */
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+.landing-card h2 {
+  /* Heading style within landing page card */
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.landing-card p {
+  /* Paragraph style within landing page card */
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.center-container {
+  /* Centered container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.search-container {
+  /* Container for search */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container form {
+  /* Form within search container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-container input[type="text"],
+.search-container button {
+  /* Style for input text and button within search container */
+  margin: 0 5px;
+}
+
+.landing-image {
+  margin-bottom: 20px;
+}
+
+.landing-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .landing-image {
+    margin-bottom: 10px;
+  }
+}
+
+
