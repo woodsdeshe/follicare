@@ -1,8 +1,12 @@
 <!-- Search Form -->
 <div class="center-container">
   <form (ngSubmit)="fetchSpecialists()">
-    <input type="text" [(ngModel)]="specialty" name="specialty" placeholder="Specialty">
-    <input type="text" [(ngModel)]="zipCode" name="zipCode" placeholder="Zip Code">
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="specialty" name="specialty" placeholder="Specialty">
+    </div>
+    <div class="input-wrapper">
+      <input type="text" [(ngModel)]="zipCode" name="zipCode" placeholder="Zip Code">
+    </div>
     <button type="submit">Search</button>
   </form>
 </div>
