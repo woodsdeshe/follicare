@@ -5,6 +5,11 @@
   margin-bottom: 20px;
 }
 
+/* Description*/
+.description {
+  text-align: center;
+}
+
 /* Form */
 .center-container form {
   display: flex;
