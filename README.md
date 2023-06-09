@@ -57,7 +57,7 @@ If either one is not installed, you can download and install them from the [Node
 
 ## Project Planning
 
-You can find the planning documentation for this project [here]((https://docs.google.com/document/d/1IrPEi7DRGvpivJOVLtRf7Ejdoql4ds-LKyS0UoeONZQ/edit?usp=sharing). It includes:
+You can find the planning documentation for this project [here](https://docs.google.com/document/d/1IrPEi7DRGvpivJOVLtRf7Ejdoql4ds-LKyS0UoeONZQ/edit?usp=sharing). It includes:
 
 - Project deliverables and timelines
 - Detailed scope and schedule
