@@ -4,6 +4,8 @@
 
 Follicare is a consultation app designed specifically for individuals facing hair disorders. The main focus of the app is to provide accessibility and support, particularly for minority communities, in effectively managing their hair disorders. With Follicare, users can create an account, log in, search for specialists, and access a knowledge base for information on their hair disorder.
 
+[Follicare.webm](https://github.com/woodsdeshe/follicare/assets/96597549/4835b266-5014-41a5-84a2-dd2a9ea4884a)
+
 #### Desktop View
 <img src="./src/assets/Screenshot%20(35).png" alt ="wireframe image" width="50%">
 <img src="./src/assets/Screenshot%20(38).png" alt ="wireframe image" width="50%">
