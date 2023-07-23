@@ -15,6 +15,7 @@ import { ResourcesComponent } from './resources/resources.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
 import { HomeInfoComponent } from './home-info/home-info.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { BookingComponent } from './booking/booking.component';
 
 
 
@@ -30,7 +31,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
     ResourcesComponent,
     SpecialistsComponent,
     HomeInfoComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
