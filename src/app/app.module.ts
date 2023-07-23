@@ -15,8 +15,9 @@ import { ResourcesComponent } from './resources/resources.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
 import { HomeInfoComponent } from './home-info/home-info.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { BookingComponent } from './booking/booking.component';
-
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
 
 
 @NgModule({
@@ -31,8 +32,7 @@ import { BookingComponent } from './booking/booking.component';
     ResourcesComponent,
     SpecialistsComponent,
     HomeInfoComponent,
-    LandingPageComponent,
-    BookingComponent
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +40,7 @@ import { BookingComponent } from './booking/booking.component';
     NgbModule,
     FormsModule,
     AppRoutingModule,
-
+    FullCalendarModule,
   ],
   providers: [
   ],
